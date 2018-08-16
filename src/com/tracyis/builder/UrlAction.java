@@ -51,7 +51,7 @@ public class UrlAction extends AnAction {
 //        String funName = (inputText.substring(0, inputText.lastIndexOf("("))).trim();
 //        className = funName.substring(funName.lastIndexOf(" ") + 1);
         String classFun = document.getImmutableCharSequence().toString();
-        className = classFun.substring(classFun.indexOf(" "), classFun.indexOf("{")).replace("class ", "").trim();
+        className = classFun.substring(classFun.indexOf("class "), classFun.indexOf("{")).replace("class ", "").trim();
         //获取参数集合
         try {
             fieldVars = inputText.substring(inputText.indexOf("(") + 1, inputText.indexOf(")")).split(",");
