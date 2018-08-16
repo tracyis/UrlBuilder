@@ -113,19 +113,10 @@
                     setOrderStartDate(recentFollowStartTime)
                     setOrderEndDate(recentFollowEndTime)
                 }
-                onFilterListener?.onFilter(leadParamsBuilder.build())
-        account.value?.let {
-            dispose = crmRepository.leadList(it, leadParams)
+            crmRepository.leadList(it, leadParamsBuilder.build())
                     .retryWhen(reLoginTry())
                     .subscribeOn(Schedulers.io())
-                    .subscribe({
-                        leadList.postValue(Resource.success(it))
-                    }, {
-                        leadList.postValue(Resource.error(it))
-                    }, {}, {
-                        leadList.postValue(Resource.loading())
-                    })
-        }
+        
 这样看起来代码是不是清爽了很多,然而下一个问题来了,这么多参数,LeadParamsBuilder还是写起来很麻烦..
 nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
 
@@ -144,7 +135,8 @@ nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
 #### 3.新建domain类
     public class Pojo {
     }
-    在{}中右键 -> Generate -> UrlBuilder -> 粘贴你复制的接口 -> Ok
+    
+ 在{}中右键 -> Generate -> UrlBuilder -> 粘贴你复制的接口 -> Ok
 #### 4.接下来就是见证奇迹的时刻
         public class Pojo {
 
