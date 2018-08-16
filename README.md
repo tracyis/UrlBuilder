@@ -3,31 +3,38 @@
 
 ## 应用场景
 我们在写接口的时候,如果遇到业务较为复杂参数众多的时候,会写很多类似这种代码,比如下面这种:
-#### 网络层 
-  Observable<Response<CompanyList>> companyList(
-            @Query("group_id") String group_id,
+#### 网络层
+    Observable<Response<CompanyList>> companyList(
             @Query("keyword") String keyword,
-            @Query("page_no") Integer page_no,
-            @Query("page_size") Integer page_size,
+            @Query("biz_type") String biz_type,
+            @Query("group_id") String group_id,
+            @Query("origin") String origin,
+            @Query("country") String[] country,
+            @Query("province") String province,
+            @Query("city") String city,
+            @Query("curPage") Integer page_no,
+            @Query("pageSize") Integer page_size,
             @Query("pin") Integer pin,
             @Query("sort_field") String sort_field,
             @Query("sort_type") String sort_type,
             @Query("star[]") String[] star,
             @Query("status_id[]") String[] status_id,
-            @Query("tag_match_mode") Integer tag_match_mode,
             @Query("tags[]") String[] tags,
-            @Query("owner_type") Integer owner_type,
-            @Query("last_owner") Integer last_owner,
-            @Query("user_id[]") String[] user_id,
-            @Query("user_num[]") String[] user_num,
-            @Query("biz_type") String type,
-            @Query("origin") String origin,
+            @Query("archive_start_date") String archive_start_date,
+            @Query("archive_end_date") String archive_end_date,
+            @Query("follow_up_start_date") String follow_up_start_date,
+            @Query("follow_up_end_date") String follow_up_end_date,
             @Query("order_start_date") String order_start_date,
             @Query("order_end_date") String order_end_date,
-            @Query("start_date") String start_date,
-            @Query("end_date") String end_date,
             @Query("compare_day") Integer compare_day,
-            @Query("compare_day_op") Integer compare_day_op
+            @Query("compare_day_op") Integer compare_day_op,
+            @Query("user_id[]") String[] user_id,
+            @Query("user_num[]") String[] user_num,
+            @Query("category_ids[]") String[] category_ids,
+            @Query("lead_field") String lead_field,
+            @Query("customer_field") String customer_field,
+            @Query("show_all") Integer show_all,
+            @Query("will_public") Integer will_public
     );
 #### 数据传输层      
     public Observable<CompanyList> companyList(AccountModel accountModel, String group_id, String keyword, Integer page_no, Integer page_size, Integer pin, String sort_field, String sort_type, String[] star,
