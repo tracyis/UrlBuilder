@@ -29,7 +29,6 @@
             @Query("compare_day") Integer compare_day,
             @Query("compare_day_op") Integer compare_day_op
     );
-    
 #### 数据传输层      
     public Observable<CompanyList> companyList(AccountModel accountModel, String group_id, String keyword, Integer page_no, Integer page_size, Integer pin, String sort_field, String sort_type, String[] star,
                                                String[] status_id, Integer tag_match_mode, String[] tags, Integer ownerType, Integer last_owner, String[] userId, String[] user_num, String type, String origin,
@@ -124,8 +123,8 @@
 nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
 
 ## Usage
-1.安装UrlBuilder.jar
-2.复制你需要生成Builder的接口,格式如下
+#### 1.安装UrlBuilder.jar
+#### 2.复制你需要生成Builder的接口,格式如下
     Observable<Response> saveContact(
             @Field("contact_id") String contact_id,
             @Field("group_id") String group_id,
@@ -135,11 +134,11 @@ nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
             @Field("tel") String tel,
             @Field("remark") String remark
     );
-3.新建domain类
+#### 3.新建domain类
     public class Pojo {
     }
     在{}中右键 -> Generate -> UrlBuilder -> 粘贴你复制的接口 -> Ok
-4.接下来就是见证奇迹的时刻
+#### 4.接下来就是见证奇迹的时刻
         public class Pojo {
 
           String userId;
