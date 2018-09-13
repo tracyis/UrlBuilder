@@ -137,7 +137,7 @@ nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
     }
     
  在{}中右键 -> Generate -> UrlBuilder -> 粘贴你复制的接口 -> Ok
- ![image](https://github.com/tracyis/UrlBuilder/blob/master/gif/%E6%93%8D%E4%BD%9C%E5%AE%9E%E4%BE%8B.gif)
+
 #### 4.接下来就是见证奇迹的时刻
         public class Pojo {
 
@@ -168,5 +168,7 @@ nonono,使用本项目的插件,LeadParamsBuilder可以轻松一键生成
           }
           }
         }
+        
+ ![image](https://github.com/tracyis/UrlBuilder/blob/master/gif/%E6%93%8D%E4%BD%9C%E5%AE%9E%E4%BE%8B.gif)
 ## Issue
 目前暂时只支持文中贴出的接口格式,后续会支持更多
